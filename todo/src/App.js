@@ -4,6 +4,7 @@ import Pagination from './components/Pagination';
 import PostList from './components/PostList';
 import queryString from 'query-string';
 import PostFiltersForm from './components/PostFiltersForm';
+import Clock from './components/Clock';
 // import TodoForm from './components/TodoForm';
 // import ColorBox from './components/ColorBox';
 // import TodoList from './components/TodoList';
@@ -26,6 +27,7 @@ function App() {
     _page: 1,
     title_like: '',
   });
+  const [showClock, setShowClock] = useState(true);
 
   useEffect(() => {
     (async () => {
@@ -82,9 +84,13 @@ function App() {
       {/* <ColorBox /> */}
       {/* <TodoForm onSubmit={handleTodoFormSubmit} />
       <TodoList todos={todoList} onTodoClick={handleTodoClick} /> */}
-      <PostFiltersForm onSubmit={handleFiltersChange} />
+
+      {/* <PostFiltersForm onSubmit={handleFiltersChange} />
       <PostList posts={postList} />
-      <Pagination pagination={pagination} onPageChange={handlePageChange} />
+      <Pagination pagination={pagination} onPageChange={handlePageChange} /> */}
+
+      {showClock && <Clock />}
+      <button onClick={() => setShowClock(false)}>Hide clock</button>
     </div>
   );
 }
