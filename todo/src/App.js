@@ -5,9 +5,12 @@ import PostList from './components/PostList';
 import queryString from 'query-string';
 import PostFiltersForm from './components/PostFiltersForm';
 import Clock from './components/Clock';
-// import TodoForm from './components/TodoForm';
+import productApi from './api/productApi';
+
+import TodoForm from './components/TodoForm';
+import TodoList from './components/TodoList';
+
 // import ColorBox from './components/ColorBox';
-// import TodoList from './components/TodoList';
 
 function App() {
   /*   const [todoList, setTodoList] = useState([
@@ -59,6 +62,17 @@ function App() {
     });
   }
 
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const params = {
+        _limit: 10,
+      };
+      const productList = await productApi.getAll(params);
+      console.log(productList);
+    };
+    fetchProducts();
+  }, []);
+
   /*   function handleTodoClick(todo) {
     const index = todoList.findIndex((x) => x.id === todo.id);
     if (index < 0) return;
@@ -85,12 +99,14 @@ function App() {
       {/* <TodoForm onSubmit={handleTodoFormSubmit} />
       <TodoList todos={todoList} onTodoClick={handleTodoClick} /> */}
 
+      <TodoForm />
+
       {/* <PostFiltersForm onSubmit={handleFiltersChange} />
       <PostList posts={postList} />
       <Pagination pagination={pagination} onPageChange={handlePageChange} /> */}
 
-      {showClock && <Clock />}
-      <button onClick={() => setShowClock(false)}>Hide clock</button>
+      {/* {showClock && <Clock />}
+      <button onClick={() => setShowClock(false)}>Hide clock</button> */}
     </div>
   );
 }
