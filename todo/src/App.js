@@ -9,6 +9,7 @@ import productApi from './api/productApi';
 
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
+import CounterFeature from './features/Counter';
 
 // import ColorBox from './components/ColorBox';
 
@@ -107,6 +108,8 @@ function App() {
 
       {/* {showClock && <Clock />}
       <button onClick={() => setShowClock(false)}>Hide clock</button> */}
+
+      <CounterFeature />
     </div>
   );
 }
