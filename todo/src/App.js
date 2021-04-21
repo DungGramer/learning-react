@@ -5,7 +5,7 @@ import PostList from './components/PostList';
 import queryString from 'query-string';
 import PostFiltersForm from './components/PostFiltersForm';
 import Clock from './components/Clock';
-import productApi from './api/productApi';
+import productApi from 'api/productApi';
 
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
