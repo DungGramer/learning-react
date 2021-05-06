@@ -12,7 +12,6 @@ function TodoFeature(props) {
   return (
     <div>
       TODO SHARED UI
-
       <Switch>
         <Route path={match.path} component={ListPage} exact />
         <Route path={`${match.path}/:todoId`} component={DetailPage} exact />
